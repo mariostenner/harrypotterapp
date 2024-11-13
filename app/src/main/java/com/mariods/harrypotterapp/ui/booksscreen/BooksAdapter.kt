@@ -11,7 +11,6 @@ class BooksAdapter() : RecyclerView.Adapter<BooksViewHolder>() {
     private val listBooks = mutableListOf<BooksList>()
 
     fun setItems(newItems: List<BooksList>){
-
         listBooks.clear()
         listBooks.addAll(newItems)
         notifyDataSetChanged()
