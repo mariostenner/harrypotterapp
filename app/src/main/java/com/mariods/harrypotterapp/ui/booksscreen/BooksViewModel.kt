@@ -3,14 +3,16 @@ package com.mariods.harrypotterapp.ui.booksscreen
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.mariods.harrypotterapp.domain.models.Attributes
-import com.mariods.harrypotterapp.domain.models.BooksList
+import androidx.lifecycle.viewModelScope
+import com.mariods.harrypotterapp.domain.model.Attributes
+import com.mariods.harrypotterapp.domain.model.BooksList
 import com.mariods.harrypotterapp.domain.usecases.GetAllBooks
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class BooksViewModel @Inject constructor(getAllBooks: GetAllBooks) : ViewModel() {
+class BooksViewModel @Inject constructor(private val getAllBooks: GetAllBooks) : ViewModel() {
 
     private val _booksItems = MutableLiveData<List<BooksList>>()
     val booksItems: LiveData<List<BooksList>> get() = _booksItems
@@ -20,6 +22,10 @@ class BooksViewModel @Inject constructor(getAllBooks: GetAllBooks) : ViewModel()
     }
 
     private fun getBooks() {
+
+        viewModelScope.launch {
+            _booksItems.value = getAllBooks()
+        }
 
         _booksItems.value = listOf(
             BooksList(

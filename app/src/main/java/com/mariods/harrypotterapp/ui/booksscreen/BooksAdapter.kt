@@ -3,9 +3,8 @@ package com.mariods.harrypotterapp.ui.booksscreen
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mariods.harrypotterapp.R
 import com.mariods.harrypotterapp.databinding.ItemBookBinding
-import com.mariods.harrypotterapp.domain.models.BooksList
+import com.mariods.harrypotterapp.domain.model.BooksList
 
 class BooksAdapter() : RecyclerView.Adapter<BooksViewHolder>() {
 

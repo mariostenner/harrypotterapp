@@ -1,10 +1,9 @@
 package com.mariods.harrypotterapp.ui.booksscreen
 
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.mariods.harrypotterapp.R
+import coil.load
 import com.mariods.harrypotterapp.databinding.ItemBookBinding
-import com.mariods.harrypotterapp.domain.models.BooksList
+import com.mariods.harrypotterapp.domain.model.BooksList
 
 
 class BooksViewHolder(private val binding: ItemBookBinding) :
@@ -13,6 +12,7 @@ class BooksViewHolder(private val binding: ItemBookBinding) :
     fun renderBinding(books: BooksList) {
         binding.tvBookName.text = books.attributes.title
         binding.tvBookPages.text = books.attributes.pages.toString()
+        binding.ivBookCover.load(books.attributes.cover)
     }
 
 }
