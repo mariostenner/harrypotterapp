@@ -1,21 +1,18 @@
 package com.mariods.harrypotterapp.ui.booksscreen
 
-import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mariods.harrypotterapp.R
+import com.mariods.harrypotterapp.databinding.ItemBookBinding
 import com.mariods.harrypotterapp.domain.models.BooksList
 
 
-class BooksViewHolder(view : View) : RecyclerView.ViewHolder(view)  {
+class BooksViewHolder(private val binding: ItemBookBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
-    val tvBookName = view.findViewById<TextView>(R.id.tv_book_name)
-    val tvBookPages = view.findViewById<TextView>(R.id.tv_book_pages)
-
-
-    fun render(books: BooksList){
-        tvBookName.text = books.attributes.title
-        tvBookPages.text = books.attributes.pages.toString()
+    fun renderBinding(books: BooksList) {
+        binding.tvBookName.text = books.attributes.title
+        binding.tvBookPages.text = books.attributes.pages.toString()
     }
 
 }

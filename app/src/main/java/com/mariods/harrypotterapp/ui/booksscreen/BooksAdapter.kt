@@ -4,20 +4,32 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mariods.harrypotterapp.R
+import com.mariods.harrypotterapp.databinding.ItemBookBinding
 import com.mariods.harrypotterapp.domain.models.BooksList
 
-class BooksAdapter(private val listBooks: List<BooksList>) : RecyclerView.Adapter<BooksViewHolder>() {
+class BooksAdapter() : RecyclerView.Adapter<BooksViewHolder>() {
+
+    private val listBooks = mutableListOf<BooksList>()
+
+    fun setItems(newItems: List<BooksList>){
+
+        listBooks.clear()
+        listBooks.addAll(newItems)
+        notifyDataSetChanged()
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BooksViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return BooksViewHolder(layoutInflater.inflate(R.layout.item_book, parent, false))
+        val binding = ItemBookBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return BooksViewHolder(binding)
     }
 
     override fun getItemCount(): Int = listBooks.size
 
     override fun onBindViewHolder(holder: BooksViewHolder, position: Int) {
 
-        val item = listBooks[position]
-        holder.render(item)
+        holder.renderBinding(listBooks[position])
 
     }
+
 }
