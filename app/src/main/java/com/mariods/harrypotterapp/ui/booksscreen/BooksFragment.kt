@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.mariods.harrypotterapp.R
 import com.mariods.harrypotterapp.databinding.FragmentBooksBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,7 +27,7 @@ class BooksFragment : Fragment(R.layout.fragment_books) {
         _binding = FragmentBooksBinding.bind(view)
 
         adapter = BooksAdapter()
-        binding.rvBooks.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvBooks.layoutManager = LinearLayoutManager(requireContext(), HORIZONTAL, false)
         binding.rvBooks.adapter = adapter
 
         booksViewModel.booksItems.observe(viewLifecycleOwner){
