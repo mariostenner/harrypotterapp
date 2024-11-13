@@ -55,7 +55,7 @@ dependencies {
     implementation ("com.google.code.gson:gson:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation(libs.jetbrains.kotlinx.coroutines)
-
+    implementation(libs.coil.kt)
     implementation("com.google.dagger:hilt-android:2.46")
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.recyclerview)
