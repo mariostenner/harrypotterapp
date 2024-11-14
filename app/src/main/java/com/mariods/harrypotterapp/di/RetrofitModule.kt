@@ -1,6 +1,6 @@
 package com.mariods.harrypotterapp.di
 
-import com.mariods.harrypotterapp.data.network.BooksApiClient
+import com.mariods.harrypotterapp.data.network.HarryPotterApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,8 +27,8 @@ object RetrofitModule {
 
     @Singleton
     @Provides
-    fun providesBooksApiClient(retrofit: Retrofit): BooksApiClient{
-        return retrofit.create(BooksApiClient::class.java)
+    fun providesBooksApiClient(retrofit: Retrofit): HarryPotterApiClient{
+        return retrofit.create(HarryPotterApiClient::class.java)
     }
 
 }

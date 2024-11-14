@@ -1,6 +1,5 @@
 package com.mariods.harrypotterapp.ui.mainscreen
 
-import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Icon
@@ -13,14 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.viewinterop.AndroidView
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentContainerView
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mariods.harrypotterapp.R
 import com.mariods.harrypotterapp.ui.booksscreen.BooksFragment
+import com.mariods.harrypotterapp.ui.booksscreen.BooksFragmentScreen
 import com.mariods.harrypotterapp.ui.charactersscreen.CharactersScreen
 import com.mariods.harrypotterapp.ui.moviesscreen.MoviesScreen
 import com.mariods.harrypotterapp.ui.navigation.BottomNavScreen
@@ -49,13 +43,12 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
             }
         }
     ) {
-        Box(modifier = Modifier.fillMaxSize()){
+        Box(modifier = Modifier.fillMaxSize()) {
             val context = LocalContext.current
-            when(selectedScreen){
+            when (selectedScreen) {
                 BottomNavScreen.Books -> {
                     //BooksFragment()
-                    ShowFragment(context, BooksFragment::class.java)
-
+                    BooksFragmentScreen(context, BooksFragment::class.java)
                 }
                 BottomNavScreen.Characters -> CharactersScreen()
                 BottomNavScreen.Movies -> MoviesScreen()
@@ -64,25 +57,6 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
     }
 
 
-
-
-
-
 }
 
-@Composable
-fun ShowFragment(context: Context, booksFragment: Class<BooksFragment>) {
 
-    val fragmentActivity = context as FragmentActivity
-    AndroidView(factory = {
-        FragmentContainerView(it).apply {
-            id = R.id.fragment_books_container
-            fragmentActivity.supportFragmentManager.commit {
-                replace(id, booksFragment.newInstance())
-            }
-        }
-    },
-        modifier = Modifier.fillMaxSize()
-        )
-
-}
