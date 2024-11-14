@@ -11,9 +11,9 @@ class BooksViewHolder(private val binding: ItemBookBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun renderBinding(books: BooksList) {
-        binding.tvBookName.text = books.attributes.title
-        binding.tvBookPages.text = "${books.attributes.pages.toString()} pages"
-        binding.ivBookCover.load(books.attributes.cover){
+        binding.tvBookName.text = books.booksAttributes.title
+        binding.tvBookPages.text = "${books.booksAttributes.pages.toString()} pages"
+        binding.ivBookCover.load(books.booksAttributes.cover){
             scale(Scale.FILL)
         }
     }

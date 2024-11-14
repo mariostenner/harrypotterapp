@@ -8,20 +8,20 @@ data class BooksModel(
 )
 
 data class BooksList(
-    @SerializedName("id")val id: String,
-    @SerializedName("attributes")val attributes: Attributes
+    @SerializedName("id") val id: String,
+    @SerializedName("attributes") val booksAttributes: BooksAttributes
 )
 
-data class Attributes(
-    @SerializedName("title")val title: String,
-    @SerializedName("author")val author: String,
-    @SerializedName("cover")val cover: String,
-    @SerializedName("pages")val pages: Int,
-    @SerializedName("release_date")val releaseDate: String,
-    @SerializedName("summary")val summary: String
+data class BooksAttributes(
+    @SerializedName("title") val bkTitle: String,
+    @SerializedName("author") val bkAuthor: String,
+    @SerializedName("cover") val bkCover: String,
+    @SerializedName("pages") val bkPages: Int,
+    @SerializedName("release_date") val bkReleaseDate: String,
+    @SerializedName("summary") val bkSummary: String
 )
 
-
+//Modificar a identificador con bkTitle y Attributes a BooksAttributes
 
 
 /*

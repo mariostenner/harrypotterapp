@@ -7,10 +7,10 @@ data class Books(
 
 data class BooksList(
     val id: String,
-    val attributes: Attributes
+    val booksAttributes: BooksAttributes
 )
 
-data class Attributes(
+data class BooksAttributes(
     val title: String,
     val author: String,
     val cover: String,
@@ -19,10 +19,11 @@ data class Attributes(
     val summary: String
 )
 
-fun com.mariods.harrypotterapp.data.network.model.Attributes.toDomain() =
-    Attributes(title, author, cover, pages, releaseDate, summary)
+fun com.mariods.harrypotterapp.data.network.model.BooksAttributes.toDomain() =
+    BooksAttributes(bkTitle, bkAuthor, bkCover, bkPages, bkReleaseDate, bkSummary)
 
 fun com.mariods.harrypotterapp.data.network.model.BooksList.toDomain() = BooksList(
     id,
-    attributes.toDomain()
+    booksAttributes.toDomain()
 )
+
