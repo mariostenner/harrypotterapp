@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     alias(libs.plugins.plugin.hilt)
     alias(libs.plugins.jetbrainsKotlinSerialization)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -62,14 +63,14 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
     implementation(libs.androidx.fragment)
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.google.code.gson:gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.gson)
+    implementation(libs.okhttp)
     implementation(libs.jetbrains.kotlinx.coroutines)
     implementation(libs.coil.kt)
-    implementation("com.google.dagger:hilt-android:2.46")
+    implementation(libs.hilt.android)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.activity.compose)
@@ -84,7 +85,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    kapt("com.google.dagger:hilt-android-compiler:2.46")
+    kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.hilt.compose.navigation)
