@@ -15,8 +15,8 @@ object RetrofitModule {
 
     private const val BASE_URL = "https://api.potterdb.com/"
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideRetrofit(): Retrofit {
         return Retrofit
             .Builder()
@@ -25,8 +25,8 @@ object RetrofitModule {
             .build()
     }
 
-    @Singleton
     @Provides
+    @Singleton
     fun providesBooksApiClient(retrofit: Retrofit): HarryPotterApiClient{
         return retrofit.create(HarryPotterApiClient::class.java)
     }
