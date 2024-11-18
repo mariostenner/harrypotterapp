@@ -29,6 +29,8 @@ hiltNavCompose = "1.2.0"
 retrofit = "2.9.0"
 runtimeLivedata = "1.7.5"
 pdfViewer = "3.2.0-beta.1"
+junitJupiter = "5.8.1"
+mokk = "1.13.12"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -70,6 +72,8 @@ androidx-hilt-compose-navigation = { group = "androidx.hilt", name = "hilt-navig
 androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
+io-mokk = {group = "io.mockk", name = "mockk", version.ref = "mokk"}
 
 
 [plugins]

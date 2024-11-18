@@ -17,18 +17,19 @@ object RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit {
+    fun provideRetrofit(): HarryPotterApiClient {
         return Retrofit
             .Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+            .create(HarryPotterApiClient::class.java)
     }
 
-    @Provides
+    /*@Provides
     @Singleton
-    fun providesBooksApiClient(retrofit: Retrofit): HarryPotterApiClient{
+    fun providesBooksApiClient(retrofit: Retrofit): HarryPotterApiClient {
         return retrofit.create(HarryPotterApiClient::class.java)
     }
-
+     */
 }
