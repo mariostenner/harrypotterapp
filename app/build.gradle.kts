@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.plugin.hilt)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.googleServices)
+    alias(libs.plugins.crashlytics)
 }
 
 android {
@@ -82,23 +84,28 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.coil.kt.compose)
     implementation(libs.hilt.android.testing)
-    testImplementation(libs.junit.jupiter)
-    testImplementation(libs.hilt.android.testing)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.hilt.compose.navigation)
-    //TestImplementation
-    androidTestImplementation (libs.hilt.android.testing)
-    //kaptAndroidTest(libs.hilt.android.compiler)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+
+    kapt(libs.hilt.android.compiler)
+
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
+
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.hilt.android.testing)
     testImplementation(libs.jetbrains.kotlinx.coroutines.test)
     testImplementation(libs.androidx.arch.core)
     testImplementation(libs.io.mokk)
+
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation (libs.hilt.android.testing)
+
 }

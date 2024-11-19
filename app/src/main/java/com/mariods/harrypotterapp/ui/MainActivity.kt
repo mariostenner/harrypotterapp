@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         setContent {
             NavigationWrapper()
+            throw RuntimeException ("Test Crash")
+
         }
 
         //binding = ActivityMainBinding.inflate(layoutInflater)
