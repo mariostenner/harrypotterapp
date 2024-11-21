@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "780609750240",
+    "project_id": "harrypotterapp-1b6ed",
+    "storage_bucket": "harrypotterapp-1b6ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780609750240:android:b1c08d72e22666f06c7c85",
+        "android_client_info": {
+          "package_name": "com.mariods.harrypotterapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuDABIK0ymBbbuuUmm5F8kF7ZskQimv0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

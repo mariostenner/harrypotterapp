@@ -89,6 +89,7 @@ dependencies {
     implementation(libs.androidx.hilt.compose.navigation)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.auth)
 
     kapt(libs.hilt.android.compiler)
 

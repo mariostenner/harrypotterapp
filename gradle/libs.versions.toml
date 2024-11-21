@@ -80,8 +80,10 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
 io-mokk = { group = "io.mockk", name = "mockk", version.ref = "mokk" }
 
+
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-auth = {module = "com.google.firebase:firebase-auth"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
